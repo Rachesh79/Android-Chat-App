@@ -137,7 +137,7 @@ public class LoginOtpActivity extends AppCompatActivity {
                     setInProgress(false);
                     if(task.isSuccessful()){
                         Intent intent = new Intent(LoginOtpActivity.this, LoginUsernameActivity.class);
-                        intent.putExtra("Phone",phoneNumber);
+                        intent.putExtra("phone",phoneNumber);
                         startActivity(intent);
                     }else{
                         AndroidUtil.showToast(getApplicationContext(), "OTP verification failed");
@@ -153,16 +153,15 @@ public class LoginOtpActivity extends AppCompatActivity {
             @Override
             public void run() {
                 timeoutSeconds--;
-                resendOtpTextView.setText("Resend OTP in "+timeoutSeconds+" seconds");
-                if(timeoutSeconds <= 0){
-                    timeoutSeconds = 60L;
+                resendOtpTextView.setText("Resend OTP in "+timeoutSeconds +" seconds");
+                if(timeoutSeconds<=0){
+                    timeoutSeconds =60L;
                     timer.cancel();
                     runOnUiThread(() -> {
                         resendOtpTextView.setEnabled(true);
                     });
                 }
             }
-        }, 0, 1000);
+        },0,1000);
     }
-
 }

@@ -15,7 +15,8 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        mavenCentral()
+        mavenCentral() // For ImagePicker library, this line is enough. Although, it has been published on jitpack as well
+        maven ("https://jitpack.io")   //Make sure to add this in your project for uCrop - an internal library
     }
 }
 

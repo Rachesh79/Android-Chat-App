@@ -26,6 +26,7 @@ public class LoginPhoneNumActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login_phone_num);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -46,6 +47,7 @@ public class LoginPhoneNumActivity extends AppCompatActivity {
                 phoneInput.setError("Phone number is not valid");
                 return;
             }
+
             Intent intent = new Intent(LoginPhoneNumActivity.this, LoginOtpActivity.class);
             intent.putExtra("phone", countryCodePicker.getFullNumberWithPlus());
             startActivity(intent);
