@@ -209,7 +209,7 @@ public class ChatActivity extends AppCompatActivity {
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)
-                .header("Authorization", "Bearer AAAAfYBXhfQ:APA91bFK9pzdfWa9MebUJuV3bkb0GjF0pqNRj8O_3HvQI1gsy5zidC6gy6eR9L_hC73D7RzOAosTelHU8jqTGlN6glK7P1TBLbpofZhJ9oxiR-k3-pvXZkHYrzrmpeK_e8SAt82fXKlE")
+                .header("Authorization", "Bearer YOUR_API_KEY")
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
